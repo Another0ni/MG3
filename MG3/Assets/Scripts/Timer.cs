@@ -9,7 +9,8 @@ public class Timer : MonoBehaviour
     // It will be a decimal number to keep track of how much time we have left.
     //
     // Make sure to TUNE this value in the INSPECTOR after you create it!
-    private float timeFlow = 1.0f;
+
+    private float timeFlow = 5.0f;
 
     // STEP 1 -----------------------------------------------------------------
 
@@ -22,12 +23,11 @@ public class Timer : MonoBehaviour
     //      should start with.
     // It does not have any output.
     // 
-    public void BeginTimer(float timeFLow, float countdownStartTime)
+    public void BeginTimer(float countdownStartTime)
     {
         timeFlow = countdownStartTime;
-
-        // Inside the method here, set the value of our timer member variable to
-        // the countdown start time parameter.
+    // Inside the method here, set the value of our timer member variable to
+    // the countdown start time parameter.
 
     }
 
@@ -43,13 +43,14 @@ public class Timer : MonoBehaviour
     // The method's name is a built-in one from Unity that runs EVERY FRAME.
     // It has no input or output.
     //
-    private void Time()
+    private void Update()
     {
         timeFlow -= Time.deltaTime;
-        // Time.deltaTime is a variable provided to us by Unity that represents
-        //      how much time has passed since the last frame.
-        // In this method body, use Time.deltaTime to decrease the the value of 
-        //      our timer member variable every frame.
+        
+    // Time.deltaTime is a variable provided to us by Unity that represents
+    //      how much time has passed since the last frame.
+    // In this method body, use Time.deltaTime to decrease the the value of 
+    //      our timer member variable every frame.
 
 
     }
@@ -71,7 +72,7 @@ public class Timer : MonoBehaviour
     // It should be public, and has no input.
 
 
-    public bool IsFinished(float timeFlow)
+    public bool IsFinished()
     {
         if (timeFlow <= 0.0f)
         {
@@ -82,5 +83,6 @@ public class Timer : MonoBehaviour
             return false;
         }
     }
+
     // STEP 5 -----------------------------------------------------------------
 }
