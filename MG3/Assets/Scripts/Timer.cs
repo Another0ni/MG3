@@ -11,6 +11,10 @@ public class Timer : MonoBehaviour
     // Make sure to TUNE this value in the INSPECTOR after you create it!
 
     private float timeFlow = 5.0f;
+    public float one;
+    public int two;
+    public bool three;
+    public string four;
 
     // STEP 1 -----------------------------------------------------------------
 
